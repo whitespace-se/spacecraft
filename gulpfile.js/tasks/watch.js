@@ -1,4 +1,4 @@
-var config = require('../config')
+var config = require('../../config')
 var gulp   = require('gulp')
 var path   = require('path')
 var watch  = require('gulp-watch')
@@ -17,5 +17,5 @@ var watchTask = function() {
   })
 }
 
-gulp.task('watch', ['browserSync'], watchTask)
+gulp.task('watch', watchTask)
 module.exports = watchTask

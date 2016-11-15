@@ -14,6 +14,7 @@
     "gulp-sass": "^2.3.2",
     "gulp-sequence": "^0.4.6",
     "gulp-sourcemaps": "^2.2.0",
+    "gulp-watch": "^4.3.10",
     "lodash": "^4.17.1",
     "path": "^0.12.7",
     "require-dir": "^0.3.1",

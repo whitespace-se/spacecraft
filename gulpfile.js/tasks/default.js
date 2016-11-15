@@ -4,7 +4,7 @@ var getEnabledTasks = require('../lib/getEnabledTasks')
 
 var defaultTask = function(cb) {
   var tasks = getEnabledTasks('watch')
-  gulpSequence('clean', 'css', 'fractalStart', cb)
+  gulpSequence('clean', 'css', 'watch', 'fractalStart', cb)
 }
 
 gulp.task('default', defaultTask)

@@ -18,7 +18,8 @@
         "browsers": ["last 3 versions"]
       },
       "sass": {
-        "indentedSyntax": false
+        "indentedSyntax": false,
+        "outputStyle": "compressed"
       },
       "extensions": ["sass", "scss", "css"]
     },

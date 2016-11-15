@@ -1,5 +1,5 @@
 'use strict';
-const config  = require('config')
+var config  = require('./config')
 
 /*
 * Require the path module

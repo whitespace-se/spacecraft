@@ -1,8 +1,8 @@
-var gulp            = require('gulp')
+const gulp            = require('gulp')
 const fractal  = require('../../fractal.js');
 const logger = fractal.cli.console;
 
-var fractalBuild = function () {
+const fractalBuild = function () {
   const builder = fractal.web.builder();
   builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
   builder.on('error', err => logger.error(err.message));

@@ -1,8 +1,8 @@
-var gulp            = require('gulp')
+const gulp            = require('gulp')
 const fractal  = require('../../fractal.js');
 const logger = fractal.cli.console;
 
-var fractalStart = function () {
+const fractalStart = function () {
   const server = fractal.web.server({
       sync: true
   });

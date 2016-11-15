@@ -1,0 +1,30 @@
+{
+  "root": {
+    "src": "./src",
+    "dest": "./build"
+  },
+
+  "tasks": {
+    "browserSync": {
+      "server": {
+        "baseDir": "build"
+      }
+    },
+
+    "css": {
+      "src": "css",
+      "dest": "css",
+      "autoprefixer": {
+        "browsers": ["last 3 versions"]
+      },
+      "sass": {
+        "indentedSyntax": true
+      },
+      "extensions": ["sass", "scss", "css"]
+    },
+
+    "production" : {
+      "rev": true
+    }
+  }
+}

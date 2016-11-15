@@ -1,4 +1,15 @@
 {
+  "fractal": {
+    "project": {
+      "title": "Spacecraft"
+    },
+    "path": {
+      "components": "views",
+      "docs": "docs",
+      "static": "build"
+    }
+  },
+
   "root": {
     "src": "./src",
     "dest": "./build"

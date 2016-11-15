@@ -6,9 +6,12 @@ const fractalStart = function () {
   const server = fractal.web.server({
       sync: true
   });
+
   server.on('error', err => logger.error(err.message));
   return server.start().then(() => {
-      logger.success(`Fractal server is now running at ${server.urls.sync.local}`);
+      logger.success(`Local URL:      ${server.urls.sync.local}`);
+      logger.success(`Network URL:    ${server.urls.sync.external}`);
+      logger.success(`BrowserSync UI: ${server.urls.sync.ui}`);
   });
 }
 

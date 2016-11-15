@@ -3,7 +3,6 @@ if(!config.tasks.css) return
 
 const gulp         = require('gulp')
 const gulpif       = require('gulp-if')
-const browserSync  = require('browser-sync')
 const sass         = require('gulp-sass')
 const sourcemaps   = require('gulp-sourcemaps')
 const handleErrors = require('../lib/handleErrors')
@@ -25,7 +24,6 @@ const cssTask = function () {
     .pipe(gulpif(global.production, cssnano({autoprefixer: false})))
     .pipe(gulpif(!global.production, sourcemaps.write('./')))
     .pipe(gulp.dest(paths.dest))
-    .pipe(browserSync.stream())
 }
 
 gulp.task('css', cssTask)

@@ -9,21 +9,21 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-changed": "^1.3.2",
     "gulp-cssnano": "^2.1.2",
     "gulp-if": "^2.0.2",
+    "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-sequence": "^0.4.6",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-watch": "^4.3.10",
     "lodash": "^4.17.1",
-    "path": "^0.12.7",
     "require-dir": "^0.3.1",
     "webpack": "^1.13.3"
   },
   "dependencies": {
     "@frctl/fractal": "^1.0.8",
-    "@frctl/twig": "^1.0.0-alpha.0",
-    "fs": "^0.0.1-security",
-    "gulp-notify": "^2.2.0"
-  }
+    "@frctl/twig": "^1.0.0-alpha.0"
+  },
+  "license": "MIT"
 }

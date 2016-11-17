@@ -40,7 +40,7 @@ fractal.docs.set('path', path.join(__dirname, config.fractal.path.docs));
  * Theme
  */
 const theme = mandelbrot({
-    skin: "black",
+    skin: 'black',
     nav: ['docs', 'components']
 });
 fractal.web.theme(theme);

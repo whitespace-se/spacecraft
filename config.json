@@ -6,7 +6,8 @@
     "path": {
       "components": "views",
       "docs": "docs",
-      "static": "build"
+      "static": "build",
+      "export": "export"
     }
   },
 

@@ -11,8 +11,6 @@ const path = require('path');
  */
 const fractal = module.exports = require('@frctl/fractal').create();
 
-const mandelbrot = require('@frctl/mandelbrot');
-
 /*
  * Twig
  */
@@ -39,6 +37,8 @@ fractal.docs.set('path', path.join(__dirname, config.fractal.path.docs));
 /*
  * Theme
  */
+const mandelbrot = require('@frctl/mandelbrot');
+
 const theme = mandelbrot({
     skin: 'black',
     nav: ['docs', 'components']

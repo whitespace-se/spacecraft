@@ -1,5 +1,5 @@
 'use strict';
-var config  = require('./config')
+const config  = require('./config')
 
 /*
 * Require the path module
@@ -11,43 +11,59 @@ const path = require('path');
  */
 const fractal = module.exports = require('@frctl/fractal').create();
 
-const mandelbrot = require('@frctl/mandelbrot'); // require the Mandelbrot theme module
+const mandelbrot = require('@frctl/mandelbrot');
 
-// create a new instance with custom config options
-const myCustomisedTheme = mandelbrot({
-    skin: "black"
-    // any other theme configuration values here
-});
-
-fractal.web.theme(myCustomisedTheme);
-
-// Twig
+/*
+ * Twig
+ */
 const twigAdapter = require('@frctl/twig');
 fractal.components.engine(twigAdapter);
 fractal.components.set('ext', '.twig');
 
 /*
- * Give your project a title.
+ * Project title
  */
 fractal.set('project.title', config.fractal.project.title);
 
 /*
- * Tell Fractal where to look for components.
+ * Components
  */
 fractal.components.set('path', path.join(__dirname, config.fractal.path.components));
 fractal.components.set('default.preview', '@preview');
 
 /*
- * Tell Fractal where to look for documentation pages.
+ * Documentation
  */
 fractal.docs.set('path', path.join(__dirname, config.fractal.path.docs));
 
 /*
- * Tell the Fractal web preview plugin where to look for static assets.
+ * Theme
+ */
+const theme = mandelbrot({
+    skin: "black",
+    nav: ['docs', 'components']
+});
+fractal.web.theme(theme);
+
+/*
+ * Sync options
+ * - open: open up fractal in browser
+ * - browser: default browser - google chrome, followed by firefox
+ * - notify: turn on notifications
+ *
+ */
+fractal.web.set('server.syncOptions', {
+    open: true,
+    browser: ['google chrome', 'firefox'],
+    notify: true
+});
+
+/*
+ * Static assets
  */
 fractal.web.set('static.path', path.join(__dirname, config.fractal.path.static));
 
 /*
  * Build destination
  */
-fractal.web.set('builder.dest', __dirname + 'export');
+fractal.web.set('builder.dest', path.join(__dirname, config.fractal.path.export));

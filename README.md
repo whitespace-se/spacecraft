@@ -2,7 +2,23 @@
 
 ## Table of contents
 
+- [Setup](#setup)
 - [Tools](#tools)
+
+## Setup
+
+### Install yarn globally
+Yarn installation instruction](https://yarnpkg.com/en/docs/install)
+
+### Install dependencies
+```
+yarn
+```
+
+### Start spacecraft
+```
+gulp
+```
 
 ## Tools
 

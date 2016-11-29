@@ -1,13 +1,13 @@
-/*! spacecraft */
+/*! Spacecraft */
 
 /* ==========================================================================
    Main
    ========================================================================== */
 
-@import "settings/settings.main";        // Global variables
-@import "tools/tools.main";              // Functions and Mixins
+@import "settings/settings.main";        // Global variables and site wide settings
+@import "tools/tools.main";              // Global functions and mixins
 @import "generic/generic.main";          // Low-specificity, far-reaching rulesets
 @import "elements/elements.main";        // Unclassed HTML elements
-@import "objects/objects.main";          // Design-free objects, abstractions and patterns
-@import "components/components.main";    // Components and widgets
-@import "trumps/trumps.main";            // Helper classes and overrides
+@import "objects/objects.main";          // Design-free objects, abstractions and patterns (.o-)
+@import "components/components.main";    // Components and widgets (.c-)
+@import "utilities/utilities.main";      // Helper classes and overrides (.u-)

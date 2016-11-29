@@ -1,9 +1,7 @@
 /* ==========================================================================
-   Tools
+   Color settings
    ========================================================================== */
 
 
-.test {
-  box-shadow: 0 10px 10px red;
-  display: flex;
-}
+$color-mark-background: #ff0 !default;
+$color-mark-color: #000 !default;

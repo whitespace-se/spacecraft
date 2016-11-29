@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Global elements
+   ========================================================================== */
+
+html {
+  font-family: $font-sans-serif;
+  line-height: $global-line-height;
+  -ms-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in IE on Windows Phone */
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
+}
+
+body {
+  margin: 0; /* Remove the margin in all browsers */
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Remove the border on images inside links in IE 10- */
+@if $ie10andbelow {
+  img {
+    border-style: none;
+  }
+}
+
+/* Add the correct display in IE 9- */
+@if $ie9andbelow {
+  article,
+  aside,
+  footer,
+  header,
+  nav,
+  section {
+    display: block;
+  }
+
+  figcaption,
+  figure,
+  main {
+    display: block;
+  }
+
+  audio,
+  video {
+    display: inline-block;
+  }
+}
+
+/*  Add the correct margin in IE 8 */
+@if $ie8andbelow {
+  figure {
+    margin: 1em 40px;
+  }
+}

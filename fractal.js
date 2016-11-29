@@ -35,7 +35,7 @@ fractal.set('project.title', config.fractal.project.title);
  * Tell Fractal where to look for components.
  */
 fractal.components.set('path', path.join(__dirname, config.fractal.path.components));
-fractal.components.set('default.preview', '@preview');
+fractal.components.set('default.preview', '@master');
 
 /*
  * Tell Fractal where to look for documentation pages.
@@ -51,3 +51,4 @@ fractal.web.set('static.path', path.join(__dirname, config.fractal.path.static))
  * Build destination
  */
 fractal.web.set('builder.dest', __dirname + 'export');
+

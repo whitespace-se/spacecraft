@@ -35,6 +35,12 @@
       "extensions": ["sass", "scss", "css"]
     },
 
+    "images": {
+      "src": "img",
+      "dest": "img",
+      "extensions": ["jpg", "png", "svg", "gif"]
+    },
+
     "fonts": {
       "src": "fonts",
       "dest": "fonts",

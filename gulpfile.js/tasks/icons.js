@@ -6,7 +6,7 @@ const path      = require('path')
 
 const paths = {
   src: path.join(config.root.src, config.tasks.icons.src, '/**/*.svg'),
-  dest: path.join(config.tasks.icons.dest)
+  dest: path.join(config.root.dest, config.tasks.icons.dest)
 }
 
 const iconsTask = function (cb) {

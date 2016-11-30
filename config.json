@@ -54,7 +54,7 @@
 
     "icons": {
       "src": "icons",
-      "dest": "./views/sprite",
+      "dest": "icons",
       "config": {
         "mode": {
           "css": {
@@ -62,8 +62,8 @@
               "scss": true
             },
             "example": {
-              "template": "gulpfile.js/templates/sprite.twig",
-              "dest": "sprite.twig"
+              "template": "gulpfile.js/templates/sprite.mustache",
+              "dest": "sprite.html"
             }
           }
         }

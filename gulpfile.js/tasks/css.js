@@ -9,6 +9,7 @@ const handleErrors = require('../lib/handleErrors')
 const autoprefixer = require('gulp-autoprefixer')
 const path         = require('path')
 const cssnano      = require('gulp-cssnano')
+const combineMq = require('gulp-combine-mq');
 
 const paths = {
   src: path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}'),
@@ -20,6 +21,7 @@ const cssTask = function () {
     .pipe(gulpif(!global.production, sourcemaps.init()))
     .pipe(sass(config.tasks.css.sass))
     .on('error', handleErrors)
+    .pipe(combineMq({beautify: false}))
     .pipe(autoprefixer(config.tasks.css.autoprefixer))
     .pipe(gulpif(global.production, cssnano({autoprefixer: false})))
     .pipe(gulpif(!global.production, sourcemaps.write('./')))

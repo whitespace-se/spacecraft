@@ -9,7 +9,7 @@ const handleErrors = require('../lib/handleErrors')
 const autoprefixer = require('gulp-autoprefixer')
 const path         = require('path')
 const cssnano      = require('gulp-cssnano')
-const combineMq = require('gulp-combine-mq');
+const combineMq    = require('gulp-combine-mq');
 
 const paths = {
   src: path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}'),

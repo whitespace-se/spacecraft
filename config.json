@@ -22,6 +22,11 @@
       }
     },
 
+    "static": {
+      "src": "static",
+      "dest": "./"
+    },
+
     "css": {
       "src": "scss",
       "dest": "css",

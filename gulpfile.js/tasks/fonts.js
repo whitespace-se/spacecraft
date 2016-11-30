@@ -11,7 +11,7 @@ const paths = {
 }
 
 const fontsTask = function() {
-  return gulp.src([paths.src])
+  return gulp.src([paths.src, '*!README.md'])
     .pipe(changed(paths.dest)) // Ignore unchanged files
     .pipe(gulp.dest(paths.dest))
 }

@@ -35,6 +35,24 @@
       "extensions": ["sass", "scss", "css"]
     },
 
+    "icons": {
+      "src": "icons",
+      "dest": "./views/sprite",
+      "config": {
+        "mode": {
+          "css": {
+            "render": {
+              "scss": true
+            },
+            "example": {
+              "template": "gulpfile.js/templates/sprite.twig",
+              "dest": "sprite.twig"
+            }
+          }
+        }
+      }
+    },
+
     "production" : {
       "rev": true
     }

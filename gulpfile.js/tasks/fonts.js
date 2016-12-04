@@ -6,8 +6,8 @@ const gulp        = require('gulp')
 const path        = require('path')
 
 const paths = {
-  src: path.join(config.root.path, config.root.src, config.tasks.fonts.src, '/**/*.{' + config.tasks.fonts.extensions + '}'),
-  dest: path.join(config.root.path, config.root.dest, config.tasks.fonts.dest)
+  src: path.join(config.root.src, config.tasks.fonts.src, '/**/*.{' + config.tasks.fonts.extensions + '}'),
+  dest: path.join(config.root.dest, config.tasks.fonts.dest)
 }
 
 const fontsTask = function() {

@@ -26,9 +26,9 @@
     "webpack": "^1.13.3"
   },
   "dependencies": {
-    "@frctl/fractal": "^1.0.8",
-    "@frctl/mandelbrot": "^1.0.7",
-    "@frctl/twig": "^1.0.0-alpha.0"
+    "@frctl/fractal": "^1.0.11",
+    "@frctl/mandelbrot": "^1.1.0-alpha.1",
+    "@frctl/twig": "^1.0.0-beta.1"
   },
   "license": "MIT"
 }

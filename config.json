@@ -1,5 +1,6 @@
 {
   "root": {
+    "path": "./",
     "src": "src",
     "dest": "build"
   },
@@ -44,6 +45,20 @@
       "src": "img",
       "dest": "img",
       "extensions": ["jpg", "png", "svg", "gif"]
+    },
+
+    "js": {
+      "src": "js",
+      "dest": "js",
+      "entries": {
+        "app": ["./site.js"]
+      },
+      "extensions": ["js", "json"],
+      "babel": {
+        "presets": ["es2015", "stage-1"],
+        "plugins": []
+      },
+      "extractSharedJs": false
     },
 
     "fonts": {

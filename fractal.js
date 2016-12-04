@@ -52,3 +52,8 @@ fractal.web.set('static.path', path.join(__dirname, config.root.path, config.fra
  * Build destination
  */
 fractal.web.set('builder.dest', __dirname + 'export');
+
+/*
+ * Sync options
+ */
+fractal.web.set('server.syncOptions', config.fractal.syncOptions);

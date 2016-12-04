@@ -3,15 +3,12 @@ const compact = require('lodash/compact')
 
 // Grouped by what can run in parallel
 const assetTasks = ['fonts', 'images']
-const codeTasks = ['css']
+const codeTasks = ['css', 'js']
 
 module.exports = function(env) {
 
   function matchFilter(task) {
     if(config.tasks[task]) {
-      if(task === 'js') {
-        task = env === 'production' ? 'webpack:production' : false
-      }
       return task
     }
   }

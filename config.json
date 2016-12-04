@@ -15,14 +15,13 @@
       "components": "views",
       "docs": "docs",
       "static": "build"
+    },
+    "syncOptions": {
+     "open": true,
+     "notify": true
     }
   },
   "tasks": {
-    "browserSync": {
-      "server": {
-        "baseDir": "build"
-      }
-    },
     "static": {
       "src": "static",
       "dest": "./"

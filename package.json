@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@frctl/fractal": "^1.0.11",
-    "@frctl/mandelbrot": "^1.1.0-alpha.1",
+    "@frctl/mandelbrot": "^1.0.7",
     "@frctl/twig": "^1.0.0-beta.1"
   },
   "license": "MIT"

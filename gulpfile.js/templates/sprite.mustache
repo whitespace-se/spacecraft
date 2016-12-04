@@ -17,7 +17,7 @@ This is an all-in-one inline version of the CSS necessary to use the SVG sprite.
 <style type="text/css">
 {{#shapes}}{{#selector.shape}}.{{#classname}}{{expression}}{{/classname}}{{^last}},
 {{/last}}{{/selector.shape}} {
-	background: url("/icons/css/{{{example}}}") {{position.relative.xy}} no-repeat;
+	background: url("/icons/css/{{{sprite}}}") {{position.relative.xy}} no-repeat;
 	width: {{width.outer}}px;
 	height: {{height.outer}}px;
 }
@@ -100,7 +100,7 @@ pre-defined in the external sprite.
 					<div class="icon-box">
 
 						<!-- {{name}} -->
-						<img src="/icons/css/{{{example}}}#{{name}}" class="{{#selector.shape}}{{#last}}{{#classname}}{{raw}}{{/classname}}-dims{{/last}}{{/selector.shape}}" alt="{{name}}"/>
+						<img src="/icons/css/{{{sprite}}}#{{name}}" class="{{#selector.shape}}{{#last}}{{#classname}}{{raw}}{{/classname}}-dims{{/last}}{{/selector.shape}}" alt="{{name}}"/>
 
 					</div>
 					<h2>{{name}}</h2>

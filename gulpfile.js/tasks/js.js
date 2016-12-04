@@ -3,7 +3,7 @@ if(!config.tasks.js) return
 
 const gulp           = require('gulp')
 const path           = require('path')
-const webpack        = require('gulp-webpack')
+const webpack        = require('webpack-stream')
 const webpackConfig = {
   watch: false,
   output: {

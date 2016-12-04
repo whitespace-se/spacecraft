@@ -13,9 +13,14 @@ const webpackConfig = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: require.resolve('babel-loader'),
         exclude: /node_modules/,
-        query: config.tasks.js.babel
+        query: {
+          presets: [
+            require.resolve('babel-preset-es2015'),
+            require.resolve('babel-preset-stage-1'),
+          ]
+        }
       }
     ]
   }

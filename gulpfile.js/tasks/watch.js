@@ -9,7 +9,7 @@ const watchTask = function() {
   watchableTasks.forEach(function(taskName) {
     const task = config.tasks[taskName]
     if(task) {
-      const glob = path.join(config.root.src, task.src, '**/*.{' + task.extensions.join(',') + '}')
+      const glob = path.join(config.root.path, config.root.src, task.src, '**/*.{' + task.extensions.join(',') + '}')
       watch(glob, function() {
        require('./' + taskName)()
       })

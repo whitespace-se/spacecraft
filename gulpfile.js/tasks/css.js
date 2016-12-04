@@ -12,8 +12,8 @@ const cssnano      = require('gulp-cssnano')
 const combineMq    = require('gulp-combine-mq');
 
 const paths = {
-  src: path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}'),
-  dest: path.join(config.root.dest, config.tasks.css.dest)
+  src: path.join(config.root.path, config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}'),
+  dest: path.join(config.root.path, config.root.dest, config.tasks.css.dest)
 }
 
 const cssTask = function () {

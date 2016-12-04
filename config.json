@@ -1,4 +1,12 @@
 {
+  "root": {
+    "path": "./",
+    "src": "src",
+    "dest": "build"
+  },
+  "production" : {
+    "rev": true
+  },
   "fractal": {
     "project": {
       "title": "Spacecraft"
@@ -9,19 +17,12 @@
       "static": "build"
     }
   },
-
-  "root": {
-    "src": "./src",
-    "dest": "./build"
-  },
-
   "tasks": {
     "browserSync": {
       "server": {
         "baseDir": "build"
       }
     },
-
     "static": {
       "src": "static",
       "dest": "./"
@@ -63,15 +64,11 @@
             },
             "example": {
               "template": "gulpfile.js/templates/sprite.mustache",
-              "dest": "sprite.html"
+              "dest": "../../../docs/sprite.twig"
             }
           }
         }
       }
-    },
-
-    "production" : {
-      "rev": true
     }
   }
 }

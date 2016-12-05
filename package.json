@@ -1,12 +1,19 @@
 {
   "name": "spacecraft",
   "version": "0.0.1",
+  "description": "",
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org:whitespace_se/spacecraft.git"
+  },
   "scripts": {
     "gulp": "gulp"
   },
   "dependencies": {
     "@frctl/fractal": "^1.0.11",
     "@frctl/mandelbrot": "^1.0.7",
+    "@frctl/nunjucks": "^1.0.2",
     "@frctl/twig": "^1.0.0-beta.1",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
@@ -31,6 +38,5 @@
     "lodash.merge": "^4.6.0",
     "require-dir": "^0.3.1",
     "webpack-stream": "^3.2.0"
-  },
-  "license": "MIT"
+  }
 }

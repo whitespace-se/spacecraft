@@ -18,13 +18,23 @@ const myCustomisedTheme = mandelbrot({
     skin: "black"
     // any other theme configuration values here
 });
-
 fractal.web.theme(myCustomisedTheme);
 
-// Twig
-const twigAdapter = require('@frctl/twig');
-fractal.components.engine(twigAdapter);
-fractal.components.set('ext', '.twig');
+/*
+ * Template engine
+ */
+if(config.fractal.templateEngine == 'nunjucks'){
+  // Twig
+  const twigAdapter = require('@frctl/twig');
+  fractal.components.engine(twigAdapter);
+}
+else {
+  // Nunjucks
+  const nunjucksAdapter = require('@frctl/nunjucks');
+  fractal.components.engine(nunjucksAdapter);
+}
+
+fractal.components.set('ext', config.fractal.templateExtension);
 
 /*
  * Give your project a title.
@@ -41,7 +51,6 @@ fractal.components.set('default.preview', '@master');
  * Tell Fractal where to look for documentation pages.
  */
 fractal.docs.set('path', path.join(__dirname, config.root.path, config.fractal.path.docs));
-fractal.docs.set('ext', '.twig');
 
 /*
  * Tell the Fractal web preview plugin where to look for static assets.

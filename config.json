@@ -11,8 +11,6 @@
     "project": {
       "title": "Spacecraft"
     },
-    "templateEngine": "twig",
-    "templateExtension": ".twig",
     "path": {
       "components": "views",
       "docs": "docs",
@@ -21,6 +19,11 @@
     "syncOptions": {
      "open": true,
      "notify": true
+    },
+    "templateEngine": "twig",
+    "templateExtension": ".twig",
+    "themeSettings": {
+      "skin": "black"
     }
   },
   "tasks": {

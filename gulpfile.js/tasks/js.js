@@ -3,7 +3,9 @@ if(!config.tasks.js) return
 
 const gulp           = require('gulp')
 const path           = require('path')
-const webpack        = require('webpack-stream')
+const webpack        = require('webpack')
+const webpackStream  = require('webpack-stream')
+
 const webpackConfig = {
   watch: false,
   output: {
@@ -26,6 +28,19 @@ const webpackConfig = {
   }
 }
 
+if(global.production){
+  webpackConfig.plugins = [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('"production"')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin()
+  ]
+}
+
 const paths = {
   src: path.join(config.root.src, config.tasks.js.src, '/**/*.{' + config.tasks.js.extensions + '}'),
   dest: path.join(config.root.dest, config.tasks.js.dest)
@@ -33,7 +48,7 @@ const paths = {
 
 const jsTask = function () {
   return gulp.src(paths.src)
-    .pipe(webpack(webpackConfig))
+    .pipe(webpackStream(webpackConfig))
     .pipe(gulp.dest(paths.dest))
 }
 

@@ -2,7 +2,8 @@
   "root": {
     "path": "./",
     "src": "src",
-    "dest": "build"
+    "dest": "build",
+    "production": "production"
   },
   "production" : {
     "rev": true

@@ -28,25 +28,25 @@ const webpackConfig = {
   }
 }
 
-if(global.production){
-  webpackConfig.plugins = [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('"production"')
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin()
-  ]
-}
-
 const paths = {
   src: path.join(config.root.src, config.tasks.js.src, '/**/*.{' + config.tasks.js.extensions + '}'),
   dest: path.join(config.root.dest, config.tasks.js.dest)
 }
 
 const jsTask = function () {
+  if(global.production){
+    webpackConfig.plugins = [
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('"production"')
+        }
+      }),
+      new webpack.optimize.UglifyJsPlugin(),
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.DedupePlugin()
+    ]
+  }
+
   return gulp.src(paths.src)
     .pipe(webpackStream(webpackConfig))
     .pipe(gulp.dest(paths.dest))

@@ -21,14 +21,15 @@ fractal.web.theme(customisedTheme);
  * Template engine
  */
 if(config.fractal.templateEngine == 'nunjucks'){
-  // Twig
-  const twigAdapter = require('@frctl/twig');
-  fractal.components.engine(twigAdapter);
-}
-else {
   // Nunjucks
   const nunjucksAdapter = require('@frctl/nunjucks');
   fractal.components.engine(nunjucksAdapter);
+
+}
+else {
+  // Twig
+  const twigAdapter = require('@frctl/twig');
+  fractal.components.engine(twigAdapter);
 }
 
 fractal.components.set('ext', config.fractal.templateExtension);

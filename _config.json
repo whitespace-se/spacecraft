@@ -21,11 +21,6 @@
      "open": true,
      "notify": true
     },
-    "theme": {
-      "src": "_fractal",
-      "dest": "_fractal",
-      "override": false
-    },
     "templateEngine": "twig",
     "templateExtension": ".twig",
     "themeSettings": {
@@ -33,11 +28,6 @@
     }
   },
   "tasks": {
-    "static": {
-      "src": "static",
-      "dest": "./"
-    },
-
     "css": {
       "src": "scss",
       "dest": "css",
@@ -50,13 +40,33 @@
       },
       "extensions": ["sass", "scss", "css"]
     },
-
+    "fonts": {
+      "src": "fonts",
+      "dest": "fonts",
+      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+    },
+    "icons": {
+      "src": "icons",
+      "dest": "icons",
+      "config": {
+        "mode": {
+          "css": {
+            "render": {
+              "scss": true
+            },
+            "example": {
+              "template": "gulpfile.js/templates/sprite.mustache",
+              "dest": "../../../views/sprite.twig"
+            }
+          }
+        }
+      }
+    },
     "images": {
       "src": "img",
       "dest": "img",
       "extensions": ["jpg", "png", "svg", "gif"]
     },
-
     "js": {
       "src": "js",
       "dest": "js",
@@ -70,29 +80,13 @@
       },
       "extractSharedJs": false
     },
-
-    "fonts": {
-      "src": "fonts",
-      "dest": "fonts",
-      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
-    },
-
-    "icons": {
-      "src": "icons",
-      "dest": "icons",
-      "config": {
-        "mode": {
-          "css": {
-            "render": {
-              "scss": true
-            },
-            "example": {
-              "template": "gulpfile.js/templates/sprite.mustache",
-              "dest": "../../../docs/sprite.twig"
-            }
-          }
-        }
-      }
-    }
+    "static": {
+      "src": "static",
+      "dest": "./"
+    },    
+    "temp": {
+      "src": "temp",
+      "dest": "temp"
+    }    
   }
 }

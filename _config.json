@@ -21,6 +21,11 @@
      "open": true,
      "notify": true
     },
+    "theme": {
+      "src": "_fractal",
+      "dest": "_fractal",
+      "override": false
+    },
     "templateEngine": "twig",
     "templateExtension": ".twig",
     "themeSettings": {

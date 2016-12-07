@@ -6,7 +6,7 @@ const getEnabledTasks = require('../lib/getEnabledTasks')
 const productionTask = function(cb) {
   global.production = true
   const tasks = getEnabledTasks('production')
-  gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'static', 'fractalBuild', cb)
+  gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'static', 'fractalTheme', 'fractalBuild', cb)
 }
 
 gulp.task('production', productionTask)

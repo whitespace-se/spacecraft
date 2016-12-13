@@ -48,6 +48,7 @@
     "icons": {
       "src": "icons",
       "dest": "icons",
+      "extensions": ["*"],
       "config": {
         "mode": {
           "css": {
@@ -82,11 +83,13 @@
     },
     "static": {
       "src": "static",
-      "dest": "./"
+      "dest": "./",
+      "extensions": ["*"]
     },    
     "temp": {
       "src": "temp",
-      "dest": "temp"
+      "dest": "temp",
+      "extensions": ["*"]
     }    
   }
 }

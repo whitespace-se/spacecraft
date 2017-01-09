@@ -22,13 +22,13 @@ fractal.web.theme(customisedTheme);
  */
 if(config.fractal.templateEngine == 'nunjucks'){
   // Nunjucks
-  const nunjucksAdapter = require('@frctl/nunjucks');
+  const nunjucksAdapter = require('@frctl/nunjucks')(config.fractal.templateSettings);
   fractal.components.engine(nunjucksAdapter);
 
 }
 else {
   // Twig
-  const twigAdapter = require('@frctl/twig');
+  const twigAdapter = require('@frctl/twig')(config.fractal.templateSettings);
   fractal.components.engine(twigAdapter);
 }
 

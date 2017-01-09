@@ -22,6 +22,7 @@
      "notify": true
     },
     "templateEngine": "twig",
+    "templateSettings":{},
     "templateExtension": ".twig",
     "themeSettings": {
       "skin": "black"

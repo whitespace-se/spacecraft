@@ -10,10 +10,20 @@ const watchTask = function() {
   tasks.codeTasks.forEach(function(taskName) {
     const task = config.tasks[taskName]
     if(task) {
-      const glob = path.join(config.root.src, task.src, '**/*.{' + task.extensions.join(',') + '}')
-      watch(glob, function() {
-       require('./' + taskName)()
-      })
+      if(task.src instanceof Array){
+        task.src.forEach(function(src) {
+          const glob = path.join(config.root.src, src, '**/*.{' + task.extensions.join(',') + '}')
+          watch(glob, function() {
+           require('./' + taskName)()
+          })
+        })
+      }
+      else{
+        const glob = path.join(config.root.src, task.src, '**/*.{' + task.extensions.join(',') + '}')
+        watch(glob, function() {
+         require('./' + taskName)()
+        })
+      }
     }
   })
 

@@ -30,7 +30,7 @@
   },
   "tasks": {
     "css": {
-      "src": "scss",
+      "src": ["scss", "views"],
       "dest": "css",
       "autoprefixer": {
         "browsers": ["last 3 versions"]

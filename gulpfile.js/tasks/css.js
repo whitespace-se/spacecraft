@@ -12,9 +12,19 @@ const cssnano      = require('gulp-cssnano')
 const combineMq    = require('gulp-combine-mq');
 
 const paths = {
-  src: path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}'),
+  src: [],
   dest: path.join(config.root.dest, config.tasks.css.dest)
 }
+
+if(config.tasks.css.src instanceof Array){
+  config.tasks.css.src.forEach(function(src) {
+    paths.src.push(path.join(config.root.src, src, '/**/*.{' + config.tasks.css.extensions + '}'))
+  })
+}
+else{
+  paths.src = path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}')
+}
+
 
 const cssTask = function () {
   return gulp.src(paths.src)

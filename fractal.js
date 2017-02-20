@@ -28,7 +28,7 @@ if(config.fractal.templateEngine == 'nunjucks'){
 }
 else {
   // Twig
-  const twigAdapter = require('@frctl/twig')(config.fractal.templateSettings);
+  const twigAdapter = require('spacecraft-twig')(config.fractal.templateSettings);
   fractal.components.engine(twigAdapter);
 }
 

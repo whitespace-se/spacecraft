@@ -11,10 +11,9 @@
     "gulp": "gulp"
   },
   "dependencies": {
-    "@frctl/fractal": "^1.0.11",
-    "@frctl/mandelbrot": "^1.0.7",
-    "@frctl/nunjucks": "^1.0.2",
-    "@frctl/twig": "^1.0.0-beta.1",
+    "@frctl/fractal": "^1.1.3",
+    "@frctl/mandelbrot": "^1.1.0",
+    "@frctl/nunjucks": "^1.0.3",
     "spacecraft-twig": "git+ssh://git@bitbucket.org:whitespace_se/spacecraft-twig.git#0.1.11",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",

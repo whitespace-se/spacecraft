@@ -18,7 +18,7 @@ const paths = {
 
 if(config.tasks.css.src instanceof Array){
   config.tasks.css.src.forEach(function(src) {
-    paths.src.push(path.join(config.root.src, src, '/**/*.{' + config.tasks.css.extensions + '}'))
+    paths.src.push(path.join(src, '/**/*.{' + config.tasks.css.extensions + '}'))
   })
 }
 else{

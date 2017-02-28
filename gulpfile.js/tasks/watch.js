@@ -12,7 +12,7 @@ const watchTask = function() {
     if(task) {
       if(task.src instanceof Array){
         task.src.forEach(function(src) {
-          const glob = path.join(config.root.src, src, '**/*.{' + task.extensions.join(',') + '}')
+          const glob = path.join(src, '**/*.{' + task.extensions.join(',') + '}')
           watch(glob, function() {
            require('./' + taskName)()
           })

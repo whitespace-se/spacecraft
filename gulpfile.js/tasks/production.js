@@ -8,15 +8,15 @@ const path         = require('path')
 const productionTask = function(cb) {
   global.production = true
 
-  if(config.production.tasks){
+  if(config.production.assetTasks && config.production.codeTasks){
     const buildPath = config.root.dest;
     const destPath = config.production.path.dest ? config.production.path.dest : config.root.production;
 
-    gulpSequence(function(){
-      del([destPath], {
-        force: true
-      });
-    }, config.production.tasks, function(){
+    gulpSequence(
+    'cleanproduction'
+    , config.production.assetTasks
+    , config.production.codeTasks
+    ,function(){
       if(config.production.folders){
         config.production.folders.forEach(function(folderName) {
           gulp.src(path.join(buildPath, folderName,'/**'))
@@ -36,6 +36,11 @@ const productionTask = function(cb) {
     gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'fractalBuild', cb)
   }
 }
-
+gulp.task('cleanproduction', function(){
+  const destPath = config.production.path.dest ? config.production.path.dest : config.root.production;
+  del([destPath], {
+    force: true
+  });
+})
 gulp.task('production', productionTask)
 module.exports = productionTask

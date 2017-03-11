@@ -8,6 +8,11 @@
   "production" : {
     "rev": true
   },
+  "assets" : {
+    "assetTasks": ["fonts", "icons", "images"],
+    "codeTasks": ["css", "js"],
+    "dest": "assets"
+  },
   "fractal": {
     "project": {
       "title": "Spacecraft"
@@ -30,7 +35,7 @@
   },
   "tasks": {
     "css": {
-      "src": ["scss", "views"],
+      "src": ["src/scss", "views"],
       "dest": "css",
       "autoprefixer": {
         "browsers": ["last 3 versions"]
@@ -55,10 +60,6 @@
           "css": {
             "render": {
               "scss": true
-            },
-            "example": {
-              "template": "gulpfile.js/templates/sprite.mustache",
-              "dest": "../../../views/sprite.twig"
             }
           }
         }
@@ -86,11 +87,11 @@
       "src": "static",
       "dest": "./",
       "extensions": ["*"]
-    },    
+    },
     "temp": {
       "src": "temp",
       "dest": "temp",
       "extensions": ["*"]
-    }    
+    }
   }
 }

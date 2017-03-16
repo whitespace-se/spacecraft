@@ -1,6 +1,6 @@
 {
   "name": "spacecraft",
-  "version": "0.1.12",
+  "version": "0.1.16",
   "description": "",
   "license": "",
   "author": "Whitespace AB <info@whitespace.se> (https://whitespace.se/)",
@@ -15,7 +15,7 @@
     "@frctl/fractal": "^1.1.3",
     "@frctl/mandelbrot": "^1.1.0",
     "@frctl/nunjucks": "^1.0.3",
-    "spacecraft-twig": "git+ssh://git@bitbucket.org:whitespace_se/spacecraft-twig.git#0.1.12",
+    "spacecraft-twig": "git+ssh://git@bitbucket.org:whitespace_se/spacecraft-twig.git#0.1.16",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
     "babel-preset-es2015": "^6.18.0",

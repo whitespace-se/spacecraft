@@ -5,6 +5,9 @@ const watch           = require('gulp-watch')
 const path            = require('path')
 
 const proxyTask = function(cb) {
+  // Run if browserSyncConfig is set
+  if(!config.proxy || !config.proxy.browserSyncConfig) return
+
   let bs = browserSync.init(config.proxy.browserSyncConfig)
 
   let css = path.join(config.root.dest, config.tasks.css.dest, '/**/*.css')

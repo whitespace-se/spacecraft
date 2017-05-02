@@ -4,10 +4,40 @@
 
 - [Theme](#theme)
 
+## Assets
+
+Default settings:
+```
+  "assets": {
+    "assetTasks": ["fonts", "icons", "images"],
+    "codeTasks": ["css", "js"],
+    "dest": "assets"
+  },
+```
+
+## Fractal or proxy
+
+Default setting is fractal.
+
+### Proxy
+Example configuration with proxy server
+```
+  "proxy":{
+    "browserSyncConfig": {
+      "proxy": "http://127.0.0.1:8000/"
+    }
+  },
+```
+
+### Without fractal or proxy
+Change to the following setting to run gulp with fractal or proxy.
+```
+  "proxy":{},
+```
+
 ## Theme
 
 Config the template settings with the following variable:
-
 ```
 "themeSettings": {
   "skin": "black"

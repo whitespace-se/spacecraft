@@ -16,3 +16,4 @@ const requireDir = require('require-dir')
 // Require all tasks in gulpfile.js/tasks, including subfolders
 requireDir('./tasks', { recurse: true })
 requireDir('./fractal', { recurse: true })
+requireDir('./import', { recurse: true })

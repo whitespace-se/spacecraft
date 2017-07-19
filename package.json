@@ -39,6 +39,7 @@
     "require-dir": "^0.3.2",
     "spacecraft-twig": "git+ssh://git@bitbucket.org:whitespace_se/spacecraft-twig.git#0.1.20",
     "webpack": "^2.4.1",
-    "webpack-stream": "^3.2.0"
+    "webpack-stream": "^3.2.0",
+    "yargs": "^7.0.2"
   }
 }

@@ -5,7 +5,7 @@ const logger          = fractal.cli.console;
 
 const fractalStart = function () {
   // Don't run fractal if config.proxy is set
-  if(config.proxy.browserSyncConfig) return
+  if(config.proxy) return
 
   const server = fractal.web.server({
       sync: true

@@ -15,6 +15,10 @@ const mandelbrot = require('@frctl/mandelbrot'); // require the Mandelbrot theme
 
 // create a new instance with custom config options
 const customisedTheme = mandelbrot(config.fractal.themeSettings);
+
+if(config.fractal.templateOverride){
+	customisedTheme.addLoadPath(path.join(__dirname, config.root.path, config.fractal.templateOverride));
+}
 fractal.web.theme(customisedTheme);
 
 /*

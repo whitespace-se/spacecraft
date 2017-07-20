@@ -41,8 +41,7 @@ const jsTask = function () {
           NODE_ENV: JSON.stringify('"production"')
         }
       }),
-      new webpack.optimize.UglifyJsPlugin(),
-      new webpack.optimize.OccurrenceOrderPlugin()
+      new webpack.optimize.UglifyJsPlugin()
     ]
   }
 

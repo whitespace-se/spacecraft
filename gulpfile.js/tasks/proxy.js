@@ -6,6 +6,10 @@ const path            = require('path')
 const gulpSequence    = require('gulp-sequence')
 const getEnabledTasks = require('../lib/getEnabledTasks')
 
+if(config.proxy.dest){
+  config.root.dest = config.proxy.dest
+}
+
 const proxyTask = function(cb) {
   // Run if browserSyncConfig is set
   if(!config.proxy || !config.proxy.browserSyncConfig) {

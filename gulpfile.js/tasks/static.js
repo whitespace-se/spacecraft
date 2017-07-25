@@ -3,6 +3,11 @@ const changed = require('gulp-changed')
 const gulp    = require('gulp')
 const path    = require('path')
 
+// Change root destination for proxy
+if(config.proxy.dest){
+  config.root.dest = config.proxy.dest
+}
+
 const paths = {
   src: [
     path.join(config.root.src, config.tasks.static.src, '/**'),

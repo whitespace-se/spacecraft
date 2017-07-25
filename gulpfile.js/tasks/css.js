@@ -11,6 +11,11 @@ const path         = require('path')
 const cssnano      = require('gulp-cssnano')
 const combineMq    = require('gulp-combine-mq');
 
+// Change root destination for proxy
+if(config.proxy.dest){
+  config.root.dest = config.proxy.dest
+}
+
 const paths = {
   src: [],
   dest: path.join(config.root.dest, config.tasks.css.dest)

@@ -4,6 +4,11 @@ const gulp      = require('gulp')
 const svgSprite = require('gulp-svg-sprite')
 const path      = require('path')
 
+// Change root destination for proxy
+if(config.proxy.dest){
+  config.root.dest = config.proxy.dest
+}
+
 const paths = {
   src: path.join(config.root.src, config.tasks.icons.src, '/**/*.svg'),
   dest: path.join(config.root.dest, config.tasks.icons.dest)

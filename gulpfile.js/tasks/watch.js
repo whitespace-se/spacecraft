@@ -4,6 +4,11 @@ const path   = require('path')
 const watch  = require('gulp-watch')
 const getEnabledTasks = require('../lib/getEnabledTasks')
 
+// Change root destination for proxy
+if(config.proxy.dest){
+  config.root.dest = config.proxy.dest
+}
+
 const watchTask = function() {
   const tasks = getEnabledTasks('watch')
 

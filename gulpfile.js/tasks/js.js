@@ -6,6 +6,11 @@ const path           = require('path')
 const webpack        = require('webpack')
 const webpackStream  = require('webpack-stream')
 
+// Change root destination for proxy
+if(config.proxy.dest){
+  config.root.dest = config.proxy.dest
+}
+
 const webpackConfig = {
   watch: false,
   output: {

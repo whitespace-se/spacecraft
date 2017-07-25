@@ -6,6 +6,11 @@ const path            = require('path')
 
 if(!config.assets.assetTasks || !config.assets.codeTasks || !config.assets.dest) return
 
+// Change root destination for proxy
+if(config.proxy.dest){
+  config.root.dest = config.proxy.dest
+}
+
 const assetsTask = function(cb) {
   global.production = true
 

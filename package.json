@@ -1,6 +1,6 @@
 {
   "name": "spacecraft",
-  "version": "0.1.23",
+  "version": "0.2.2",
   "description": "",
   "license": "UNLICENSED",
   "author": "Whitespace AB <info@whitespace.se> (https://whitespace.se/)",
@@ -37,7 +37,7 @@
     "lodash": "^4.17.4",
     "lodash.merge": "^4.6.0",
     "require-dir": "^0.3.2",
-    "spacecraft-twig": "git+ssh://git@bitbucket.org:whitespace_se/spacecraft-twig.git#0.1.20",
+    "spacecraft-twig": "git+ssh://git@bitbucket.org:whitespace_se/spacecraft-twig.git#0.2.2",
     "webpack": "^3.3.0",
     "webpack-stream": "^3.2.0",
     "yargs": "^8.0.2"

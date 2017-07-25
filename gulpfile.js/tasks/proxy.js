@@ -6,7 +6,7 @@ const path            = require('path')
 const gulpSequence    = require('gulp-sequence')
 const getEnabledTasks = require('../lib/getEnabledTasks')
 
-if(config.proxy.dest){
+if(config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 

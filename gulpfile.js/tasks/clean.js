@@ -3,7 +3,7 @@ const del    = require('del')
 const config = require('../../config')
 
 // Change root destination for proxy
-if(config.proxy.dest){
+if(config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 

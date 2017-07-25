@@ -12,7 +12,7 @@ const cssnano      = require('gulp-cssnano')
 const combineMq    = require('gulp-combine-mq');
 
 // Change root destination for proxy
-if(config.proxy.dest){
+if(config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 

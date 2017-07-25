@@ -5,7 +5,7 @@ const svgSprite = require('gulp-svg-sprite')
 const path      = require('path')
 
 // Change root destination for proxy
-if(config.proxy.dest){
+if(config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 

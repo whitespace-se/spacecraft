@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@frctl/fractal": "^1.1.5",
-    "@frctl/mandelbrot": "^1.1.0",
+    "@frctl/mandelbrot": "^1.2.0",
     "@frctl/nunjucks": "^1.0.3",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -38,7 +38,7 @@
     "lodash.merge": "^4.6.0",
     "require-dir": "^0.3.2",
     "spacecraft-twig": "git+ssh://git@bitbucket.org:whitespace_se/spacecraft-twig.git#0.2.2",
-    "webpack": "^3.3.0",
+    "webpack": "^3.4.1",
     "webpack-stream": "^3.2.0",
     "yargs": "^8.0.2"
   }

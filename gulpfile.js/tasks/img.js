@@ -5,9 +5,10 @@ const changed     = require('gulp-changed')
 const gulp        = require('gulp')
 const imagemin    = require('gulp-imagemin')
 const path        = require('path')
+const argv        = require('yargs').argv
 
 // Change root destination for proxy
-if(config.proxy && config.proxy.dest){
+if(argv._ == 'proxy' && config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 

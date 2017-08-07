@@ -1,11 +1,12 @@
-const config = require('../../config')
-const gulp   = require('gulp')
-const path   = require('path')
-const watch  = require('gulp-watch')
+const config          = require('../../config')
+const gulp            = require('gulp')
+const path            = require('path')
+const watch           = require('gulp-watch')
 const getEnabledTasks = require('../lib/getEnabledTasks')
+const argv            = require('yargs').argv
 
 // Change root destination for proxy
-if(config.proxy && config.proxy.dest){
+if(argv._ == 'proxy' && config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 

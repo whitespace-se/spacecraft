@@ -3,9 +3,10 @@ const config = require('../../config')
 const gulp      = require('gulp')
 const svgSprite = require('gulp-svg-sprite')
 const path      = require('path')
+const argv      = require('yargs').argv
 
 // Change root destination for proxy
-if(config.proxy && config.proxy.dest){
+if(argv._ == 'proxy' && config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 

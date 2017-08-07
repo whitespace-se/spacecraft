@@ -10,9 +10,10 @@ const autoprefixer = require('gulp-autoprefixer')
 const path         = require('path')
 const cssnano      = require('gulp-cssnano')
 const combineMq    = require('gulp-combine-mq');
+const argv         = require('yargs').argv
 
 // Change root destination for proxy
-if(config.proxy && config.proxy.dest){
+if(argv._ == 'proxy' && config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 

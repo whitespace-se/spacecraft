@@ -3,11 +3,12 @@ const gulp            = require('gulp')
 const gulpSequence    = require('gulp-sequence')
 const del             = require('del')
 const path            = require('path')
+const argv            = require('yargs').argv
 
 if(!config.assets.assetTasks || !config.assets.codeTasks || !config.assets.dest) return
 
 // Change root destination for proxy
-if(config.proxy && config.proxy.dest){
+if(argv._ == 'proxy' && config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 

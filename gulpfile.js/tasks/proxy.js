@@ -5,6 +5,8 @@ const watch           = require('gulp-watch')
 const path            = require('path')
 const gulpSequence    = require('gulp-sequence')
 const getEnabledTasks = require('../lib/getEnabledTasks')
+const argv            = require('yargs').argv
+if(argv._ != 'import') return
 
 if(config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest

@@ -2,7 +2,6 @@ const gulp   = require('gulp')
 const del    = require('del')
 const config = require('../../config')
 const argv   = require('yargs').argv
-const argv   = require('yargs').argv
 
 // Change root destination for proxy
 if(argv._ == 'proxy' && config.proxy && config.proxy.dest){

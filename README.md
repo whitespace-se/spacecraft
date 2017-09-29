@@ -101,9 +101,9 @@ Add the ```theme``` settings if you want to sync a theme folder into the build f
 
 *Available from v. 0.1.14*
 
-Use ```gulp production``` to copy files from the spacecraft project to another destination
+Use `gulp production` to copy files from the spacecraft project to another destination
 
-Add the ```production``` settings to choose which tasks to run, the order to run and which folders to sync. The paths to buildfolder and destinationfolder must also be added.
+Add the `production` settings to choose which tasks to run, the order to run and which folders to sync. The paths to buildfolder and destinationfolder must also be added.
 
 Example code to add in config.json in the project.
 ```

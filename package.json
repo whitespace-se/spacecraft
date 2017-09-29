@@ -1,8 +1,8 @@
 {
   "name": "spacecraft",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "author": "Whitespace AB <info@whitespace.se> (https://whitespace.se/)",
   "repository": {
     "type": "git",

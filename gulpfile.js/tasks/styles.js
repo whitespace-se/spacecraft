@@ -44,5 +44,5 @@ const cssTask = function () {
     .pipe(gulp.dest(paths.dest))
 }
 
-gulp.task('css', cssTask)
+gulp.task('styles', cssTask)
 module.exports = cssTask

@@ -8,21 +8,22 @@ let Liftoff = require('liftoff'),
   nopt = require('nopt'),
   format = require('util').format,
   shell = require("shelljs"),
-  config = require('../config');  
+  config = require('../config')
 
 let knownOptions = {
   'version': Boolean,
   'help': Boolean
-};
+}
 
 let shortHands = {
   'T': ['--tasks'],
   'v': ['--version'],
   'h': ['--help']
-};
+}
 
-let options = nopt(knownOptions, shortHands, process.argv, 2);
+let options = nopt(knownOptions, shortHands, process.argv, 2)
 
+// Display help
 if (options.help) {
   process.stdout.write(
     '\n' +
@@ -32,13 +33,14 @@ if (options.help) {
     '    -v, --version            output the version number\n' +
     '    -h, --help               output usage information\n' +
     '\n'
-  );
-  process.exit(1);
+  )
+  process.exit(1)
 }
 
+// Display version
 if (options.version) {
-  process.stdout.write(format('%s\n', cliPackage.version));
-  process.exit(1);
+  process.stdout.write(format('%s\n', cliPackage.version))
+  process.exit(1)
 }
 
 let cli = new Liftoff({
@@ -47,36 +49,39 @@ let cli = new Liftoff({
   configName: 'spacecraft',
   extensions: interpret.jsVariants,
   v8flags: v8flags
-});
-
-cli.on('requireFail', function (name) {
-  process.stderr.write(format('Error: Unable to load module "%s"\n', name));
-  process.exit(1);
-});
+})
 
 let invoke = function (env) {
 
-  let instance = require('../index.js');
+  // Check minimum version
+  if (!semver.satisfies(env.modulePackage.version, '>=0.2.5')) {
+    process.stderr.write('Error: local spacecraft package version should be >=0.5.6\n')
+    process.exit(1)
+  }
 
+  let instance = require('../index.js')
+
+  // Display tasks
   if (options.tasks) {
-    let getTasks = require('../gulpfile.js/lib/getTasks');
+    let getTasks = require('../gulpfile.js/lib/getTasks')
 
     process.stdout.write(
       'Available tasks:\n' +
       '  ' + getTasks().join('\n  ') + '\n'
-    );
+    )
 
-    process.exit(0);
+    process.exit(0)
   }
 
-  let args = '';
-  if(process.argv[2]){
-    args = process.argv[2];
+  // Run task
+  let args = ''
+  if (process.argv[2]) {
+    args = process.argv[2]
   }
 
-  shell.exec('gulp ' + args + ' --color=always') ;  
-};
+  shell.exec('gulp ' + args + ' --color=always')
+}
 
 cli.launch({
   configPath: options.spacecraft
-}, invoke);
+}, invoke)

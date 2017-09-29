@@ -55,5 +55,5 @@ const jsTask = function () {
     .pipe(gulp.dest(paths.dest))
 }
 
-gulp.task('js', jsTask)
+gulp.task('javscript', jsTask)
 module.exports = jsTask

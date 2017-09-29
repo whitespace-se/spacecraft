@@ -1,1 +1,132 @@
-{}
+{
+  "root": {
+    "path": "../../",
+    "src": "src",
+    "dest": "build",
+    "production": "production"
+  },
+  "production": {
+    "rev": true
+  },
+  "proxy":{
+    "browserSyncConfig": {
+      "proxy": "http://127.0.0.1:8080/"
+    },
+    "dest": "../assets"
+  },
+  "assets": {
+    "assetTasks": ["fonts", "icons", "images"],
+    "codeTasks": ["css", "js"],
+    "dest": "assets"
+  },
+  "fractal": {
+    "project": {
+      "title": "Spacecraft starter"
+    },
+    "path": {
+      "components": "views",
+      "docs": "docs",
+      "static": "build"
+    },
+    "syncOptions": {
+      "open": true,
+      "notify": true
+    },
+    "templateEngine": "twig",
+    "templateSettings": {},
+    "templateExtension": ".twig",
+    "themeSettings": {
+      "skin": "black",
+      "nav": ["docs", "components"],
+      "lang": "en"
+    }
+  },
+  "tasks": {
+    "css": {
+      "src": ["src/scss", "views"],
+      "dest": "css",
+      "autoprefixer": {
+        "browsers": ["last 3 versions"]
+      },
+      "sass": {
+        "indentedSyntax": false,
+        "outputStyle": "compressed"
+      },
+      "extensions": ["sass", "scss", "css"]
+    },
+    "fonts": {
+      "src": "fonts",
+      "dest": "fonts",
+      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+    },
+    "icons": {
+      "src": "icons",
+      "dest": "icons",
+      "extensions": ["*"],
+      "config": {
+        "mode": {
+          "symbol": {
+            "dest": "../icons",
+            "sprite": "icons.svg",
+            "example": false
+          }
+        }
+      }
+    },
+    "images": {
+      "src": "img",
+      "dest": "img",
+      "extensions": ["jpg", "png", "svg", "gif"]
+    },
+    "js": {
+      "src": "js",
+      "dest": "js",
+      "entries": {
+        "app": ["./site.js"]
+      },
+      "extensions": ["js", "json"],
+      "babel": {
+        "presets": ["es2015", "stage-1"],
+        "plugins": []
+      },
+      "extractSharedJs": false
+    },
+    "static": {
+      "src": "static",
+      "dest": "./",
+      "extensions": ["*"]
+    },
+    "temp": {
+      "src": "temp",
+      "dest": "temp",
+      "extensions": ["*"]
+    }
+  },
+  "import": {
+    "view": {
+      "src": "view",
+      "dest": "views",
+      "extensions": ["html", "twig", "json", "md", "scss", "css"]
+    },
+    "js": {
+      "src": "js",
+      "dest": "js/modules",
+      "extensions": ["js", ""]
+    },
+    "img": {
+      "src": "img",
+      "dest": "img",
+      "extensions": ["jpg", "jpeg", "png", "gif", "*"]
+    },
+    "icons": {
+      "src": "icons",
+      "dest": "icons",
+      "extensions": ["svg", "*"]
+    },
+    "docs": {
+      "src": "docs",
+      "dest": "docs",
+      "extensions": ["md", "*"]
+    }
+  }
+}

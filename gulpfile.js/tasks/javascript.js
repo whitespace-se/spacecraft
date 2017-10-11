@@ -25,8 +25,7 @@ const webpackConfig = {
         exclude: /node_modules/,
         query: {
           presets: [
-            require.resolve('babel-preset-es2015'),
-            require.resolve('babel-preset-stage-1'),
+            require.resolve('babel-preset-env'),
           ]
         }
       }
@@ -56,5 +55,5 @@ const jsTask = function () {
     .pipe(gulp.dest(paths.dest))
 }
 
-gulp.task('js', jsTask)
+gulp.task('javscript', jsTask)
 module.exports = jsTask

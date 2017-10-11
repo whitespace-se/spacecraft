@@ -22,3 +22,4 @@ module.exports = function(env) {
     codeTasks: compact(codeTasks.map(matchFilter).filter(exists))
   }
 }
+

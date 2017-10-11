@@ -3,7 +3,7 @@ const gulp         = require('gulp')
 const gulpSequence = require('gulp-sequence')
 
 const importTask = function(cb) {
-  gulpSequence('importView', 'importJs', 'importImg', 'importIcons', 'importDocs', cb)
+  gulpSequence('importView', 'importJavascript', 'importImages', 'importIcons', 'importDocumentation', cb)
 }
 
 gulp.task('import', importTask)

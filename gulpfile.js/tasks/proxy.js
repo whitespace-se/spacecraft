@@ -23,14 +23,14 @@ const proxyTask = function(cb) {
 
   let bs = browserSync.init(config.proxy.browserSyncConfig)
 
-  let css = path.join(config.root.dest, config.tasks.css.dest, '/**/*.css')
-  gulp.watch(css, function() {
-    gulp.src(css)
+  let styles = path.join(config.root.dest, config.tasks.styles.dest, '/**/*.css')
+  gulp.watch(styles, function() {
+    gulp.src(styles)
       .pipe(bs.stream())
   })
 
-  let js = path.join(config.root.dest, config.tasks.js.dest, '/**/*.js')
-  gulp.watch(js, function() {
+  let javascript = path.join(config.root.dest, config.tasks.javascript.dest, '/**/*.js')
+  gulp.watch(javascript, function() {
     bs.reload()
   })
 }

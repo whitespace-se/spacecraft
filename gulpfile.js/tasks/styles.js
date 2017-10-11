@@ -1,5 +1,5 @@
 const config       = require('../../config')
-if(!config.tasks.css) return
+if(!config.tasks.styles) return
 
 const gulp         = require('gulp')
 const gulpif       = require('gulp-if')
@@ -19,30 +19,30 @@ if(argv._ == 'proxy' && config.proxy && config.proxy.dest){
 
 const paths = {
   src: [],
-  dest: path.join(config.root.dest, config.tasks.css.dest)
+  dest: path.join(config.root.dest, config.tasks.styles.dest)
 }
 
-if(config.tasks.css.src instanceof Array){
-  config.tasks.css.src.forEach(function(src) {
-    paths.src.push(path.join(src, '/**/*.{' + config.tasks.css.extensions + '}'))
+if(config.tasks.styles.src instanceof Array){
+  config.tasks.styles.src.forEach(function(src) {
+    paths.src.push(path.join(src, '/**/*.{' + config.tasks.styles.extensions + '}'))
   })
 }
 else{
-  paths.src = path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}')
+  paths.src = path.join(config.root.src, config.tasks.styles.src, '/**/*.{' + config.tasks.styles.extensions + '}')
 }
 
 
-const cssTask = function () {
+const stylesTask = function () {
   return gulp.src(paths.src)
     .pipe(gulpif(!global.production, sourcemaps.init()))
-    .pipe(sass(config.tasks.css.sass))
+    .pipe(sass(config.tasks.styles.sass))
     .on('error', handleErrors)
     .pipe(combineMq({beautify: false}))
-    .pipe(autoprefixer(config.tasks.css.autoprefixer))
+    .pipe(autoprefixer(config.tasks.styles.autoprefixer))
     .pipe(gulpif(global.production, cssnano({autoprefixer: false})))
     .pipe(gulpif(!global.production, sourcemaps.write('./')))
     .pipe(gulp.dest(paths.dest))
 }
 
-gulp.task('styles', cssTask)
-module.exports = cssTask
+gulp.task('styles', stylesTask)
+module.exports = stylesTask

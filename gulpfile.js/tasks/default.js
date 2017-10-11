@@ -9,3 +9,4 @@ const defaultTask = function(cb) {
 
 gulp.task('default', defaultTask)
 module.exports = defaultTask
+

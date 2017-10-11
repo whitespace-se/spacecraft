@@ -1,5 +1,5 @@
 const config         = require('../../config')
-if(!config.tasks.js) return
+if(!config.tasks.javascript) return
 
 const gulp           = require('gulp')
 const path           = require('path')
@@ -34,11 +34,11 @@ const webpackConfig = {
 }
 
 const paths = {
-  src: path.join(config.root.src, config.tasks.js.src, '/**/*.{' + config.tasks.js.extensions + '}'),
-  dest: path.join(config.root.dest, config.tasks.js.dest)
+  src: path.join(config.root.src, config.tasks.javascript.src, '/**/*.{' + config.tasks.javascript.extensions + '}'),
+  dest: path.join(config.root.dest, config.tasks.javascript.dest)
 }
 
-const jsTask = function () {
+const javascriptTask = function () {
   if(global.production){
     webpackConfig.plugins = [
       new webpack.DefinePlugin({
@@ -55,5 +55,5 @@ const jsTask = function () {
     .pipe(gulp.dest(paths.dest))
 }
 
-gulp.task('javscript', jsTask)
-module.exports = jsTask
+gulp.task('javascript', javascriptTask)
+module.exports = javascriptTask

@@ -55,7 +55,7 @@ let invoke = function (env) {
 
   // Check minimum version
   if (!semver.satisfies(env.modulePackage.version, '>=0.2.5')) {
-    process.stderr.write('Error: local spacecraft package version should be >=0.5.6\n')
+    process.stderr.write('Error: local spacecraft package version should be >=0.2.5\n')
     process.exit(1)
   }
 

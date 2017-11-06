@@ -6,6 +6,7 @@ const path           = require('path')
 const webpack        = require('webpack')
 const webpackStream  = require('webpack-stream')
 const argv           = require('yargs').argv
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 // Change root destination for proxy
 if(argv._ == 'proxy' && config.proxy && config.proxy.dest){
@@ -46,7 +47,7 @@ const javascriptTask = function () {
           NODE_ENV: JSON.stringify('"production"')
         }
       }),
-      new webpack.optimize.UglifyJsPlugin()
+      new UglifyJSPlugin()
     ]
   }
 

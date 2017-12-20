@@ -1,4 +1,5 @@
 const config         = require('../../config')
+const webpackAppConfig = require('../../webpack')
 if(!config.tasks.javascript) return
 
 const gulp           = require('gulp')
@@ -18,18 +19,25 @@ const webpackConfig = {
   output: {
     filename: 'main.js'
   },
+  resolve: {
+    extensions: ['.js', '.json', ...webpackAppConfig.resolve.extensions],
+    alias: {
+        ...webpackAppConfig.resolve.alias
+    }
+  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: require.resolve('babel-loader'),
         exclude: /node_modules/,
+        loader: 'babel-loader',
         query: {
           presets: [
             require.resolve('babel-preset-env'),
           ]
         }
-      }
+      },
+      ...webpackAppConfig.module.rules,
     ]
   }
 }

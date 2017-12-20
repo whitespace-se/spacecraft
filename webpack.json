@@ -1,0 +1,9 @@
+{
+	"resolve": {
+		"extensions": [],
+		"alias": {}
+	},
+	"module": {
+    	"rules": []
+    }
+}

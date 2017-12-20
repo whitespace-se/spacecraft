@@ -43,6 +43,12 @@ if (options.version) {
   process.exit(1)
 }
 
+// Generate component
+if (options.component) {
+  process.stdout.write(format('%s\n', options.component))
+  process.exit(1)
+}
+
 let cli = new Liftoff({
   name: 'spacecraft',
   processTitle: 'spacecraft',

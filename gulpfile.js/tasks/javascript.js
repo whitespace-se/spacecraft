@@ -20,10 +20,8 @@ const webpackConfig = {
     filename: 'main.js'
   },
   resolve: {
-    extensions: ['.js', '.json', ...webpackAppConfig.resolve.extensions],
-    alias: {
-        ...webpackAppConfig.resolve.alias
-    }
+    extensions: ['.js', '.json'].concat(webpackAppConfig.resolve.extensions),
+    alias: Object.assign({}, webpackAppConfig.resolve.alias),
   },
   module: {
     rules: [
@@ -36,9 +34,8 @@ const webpackConfig = {
             require.resolve('babel-preset-env'),
           ]
         }
-      },
-      ...webpackAppConfig.module.rules,
-    ]
+      }
+    ].concat(webpackAppConfig.module.rules),
   }
 }
 

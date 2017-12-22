@@ -36,7 +36,8 @@ const webpackConfig = {
         }
       }
     ].concat(webpackAppConfig.module.rules),
-  }
+  },
+  plugins: [].concat(webpackAppConfig.plugins),
 }
 
 const paths = {
@@ -46,14 +47,16 @@ const paths = {
 
 const javascriptTask = function () {
   if(global.production){
-    webpackConfig.plugins = [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('"production"')
-        }
-      }),
-      new UglifyJSPlugin()
-    ]
+    const productionPlugins = [
+        new webpack.DefinePlugin({
+          'process.env': {
+            NODE_ENV: JSON.stringify('"production"')
+          }
+        }),
+        new UglifyJSPlugin()
+    ];
+    webpackConfig.plugins = webpackConfig.plugins || [];
+    webpackConfig.plugins = webpackConfig.plugins.concat(productionPlugins);
   }
 
   return gulp.src(paths.src)

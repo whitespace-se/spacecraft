@@ -2,18 +2,16 @@ const config         = require('../../config')
 if(!config.tasks.javascript) return
 
 const gulp           = require('gulp')
+const parcel         = require('gulp-parcel')
 const path           = require('path')
-const webpack        = require('webpack')
-const webpackStream  = require('webpack-stream')
 const argv           = require('yargs').argv
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 // Change root destination for proxy
 if(argv._ == 'proxy' && config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 
-const webpackConfig = {
+/*const webpackConfig = {
   watch: false,
   output: {
     filename: 'main.js'
@@ -32,7 +30,7 @@ const webpackConfig = {
       }
     ]
   }
-}
+}*/
 
 const paths = {
   src: path.join(config.root.src, config.tasks.javascript.src, '/**/*.{' + config.tasks.javascript.extensions + '}'),
@@ -40,7 +38,13 @@ const paths = {
 }
 
 const javascriptTask = function () {
-  if(global.production){
+    const parcelConfig = {
+        watch: false,
+        minify: global.production,
+        hmr: global.production,
+    };
+
+  /*if(global.production){
     webpackConfig.plugins = [
       new webpack.DefinePlugin({
         'process.env': {
@@ -49,10 +53,10 @@ const javascriptTask = function () {
       }),
       new UglifyJSPlugin()
     ]
-  }
+  }*/
 
   return gulp.src(paths.src)
-    .pipe(webpackStream(webpackConfig))
+    .pipe(parcel())
     .pipe(gulp.dest(paths.dest))
 }
 

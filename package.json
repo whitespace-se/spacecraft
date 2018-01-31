@@ -31,6 +31,7 @@
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.2.0",
     "gulp-notify": "^3.0.0",
+    "gulp-parcel": "^0.3.4",
     "gulp-sass": "^3.1.0",
     "gulp-sequence": "^0.4.6",
     "gulp-sourcemaps": "^2.6.1",
@@ -38,11 +39,9 @@
     "gulp-watch": "^4.3.11",
     "lodash": "^4.17.4",
     "lodash.merge": "^4.6.0",
+    "parcel-bundler": "^1.5.1",
     "require-dir": "^0.3.2",
     "spacecraft-twig": "git+ssh://git@bitbucket.org:whitespace_se/spacecraft-twig.git#0.3.0",
-    "uglifyjs-webpack-plugin": "^1.0.1",
-    "webpack": "^3.5.5",
-    "webpack-stream": "^4.0.0",
     "yargs": "^9.0.1"
   }
 }

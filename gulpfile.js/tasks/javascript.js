@@ -11,52 +11,29 @@ if(argv._ == 'proxy' && config.proxy && config.proxy.dest){
   config.root.dest = config.proxy.dest
 }
 
-/*const webpackConfig = {
-  watch: false,
-  output: {
-    filename: 'main.js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: require.resolve('babel-loader'),
-        exclude: /node_modules/,
-        query: {
-          presets: [
-            require.resolve('babel-preset-env'),
-          ]
-        }
-      }
-    ]
-  }
-}*/
+if (!config.tasks.javascript.entries) {
+    console.log('Please define an object or array in the task javascript called "entries" with the files you want as entrypoints');
+}
+let entries = Array.isArray(config.tasks.javascript.entries)
+    ? config.tasks.javascript.entries
+    : Object.values(config.tasks.javascript.entries);
+entries = [].concat.apply([], entries); // Flatten array of arrays (if exist)
 
 const paths = {
-  src: path.join(config.root.src, config.tasks.javascript.src, '/**/*.{' + config.tasks.javascript.extensions + '}'),
+  src: entries.map((entry) => (
+    path.join(config.root.src, config.tasks.javascript.src, entry)
+  )),
   dest: path.join(config.root.dest, config.tasks.javascript.dest)
 }
-
 const javascriptTask = function () {
     const parcelConfig = {
         watch: false,
         minify: global.production,
         hmr: global.production,
+        cache: true,
     };
-
-  /*if(global.production){
-    webpackConfig.plugins = [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('"production"')
-        }
-      }),
-      new UglifyJSPlugin()
-    ]
-  }*/
-
-  return gulp.src(paths.src)
-    .pipe(parcel())
+  return gulp.src(paths.src, { read: false })
+    .pipe(parcel(parcelConfig))
     .pipe(gulp.dest(paths.dest))
 }
 

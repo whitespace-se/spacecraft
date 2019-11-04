@@ -15,10 +15,10 @@
     "spacecraft": "./bin/spacecraft.js"
   },
   "dependencies": {
-    "@frctl/fractal": "^1.1.7",
+    "@frctl/fractal": "^1.2.0",
     "@frctl/mandelbrot": "^1.2.1",
     "@frctl/nunjucks": "^2.0.1",
-    "babel-core": "^6.26.0",
+    "@babel/core": "^7.6.4",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.26.7",

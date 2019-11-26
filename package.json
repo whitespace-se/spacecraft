@@ -37,7 +37,7 @@
     "lodash": "^4.17.4",
     "lodash.merge": "^4.6.0",
     "require-dir": "^0.3.2",
-    "spacecraft-twig": "git+ssh://git@bitbucket.org:whitespace_se/spacecraft-twig.git#0.2.2",
+    "spacecraft-twig": "bitbucket:whitespace_se/spacecraft-twig.git#0.2.2",
     "webpack": "^3.5.5",
     "webpack-stream": "^4.0.0",
     "yargs": "^8.0.2"

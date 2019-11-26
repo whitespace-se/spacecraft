@@ -1,4 +1,5 @@
 const config         = require('../../config')
+const webpackAppConfig = require('../../webpack')
 if(!config.tasks.javascript) return
 
 const gulp           = require('gulp')
@@ -18,20 +19,25 @@ const webpackConfig = {
   output: {
     filename: 'main.js'
   },
+  resolve: {
+    extensions: ['.js', '.json'].concat(webpackAppConfig.resolve.extensions),
+    alias: Object.assign({}, webpackAppConfig.resolve.alias),
+  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: require.resolve('babel-loader'),
         exclude: /node_modules/,
+        loader: 'babel-loader',
         query: {
           presets: [
             require.resolve('babel-preset-env'),
           ]
         }
       }
-    ]
-  }
+    ].concat(webpackAppConfig.module.rules),
+  },
+  plugins: [].concat(webpackAppConfig.plugins),
 }
 
 const paths = {
@@ -41,14 +47,16 @@ const paths = {
 
 const javascriptTask = function () {
   if(global.production){
-    webpackConfig.plugins = [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('"production"')
-        }
-      }),
-      new UglifyJSPlugin()
-    ]
+    const productionPlugins = [
+        new webpack.DefinePlugin({
+          'process.env': {
+            NODE_ENV: JSON.stringify('"production"')
+          }
+        }),
+        new UglifyJSPlugin()
+    ];
+    webpackConfig.plugins = webpackConfig.plugins || [];
+    webpackConfig.plugins = webpackConfig.plugins.concat(productionPlugins);
   }
 
   return gulp.src(paths.src)

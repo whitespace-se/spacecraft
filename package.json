@@ -15,7 +15,7 @@
     "spacecraft": "./bin/spacecraft.js"
   },
   "dependencies": {
-    "@frctl/fractal": "^1.1.7",
+    "@frctl/fractal": "~1.4.0",
     "@frctl/mandelbrot": "^1.2.0",
     "@frctl/nunjucks": "^1.0.3",
     "babel-core": "^6.26.0",

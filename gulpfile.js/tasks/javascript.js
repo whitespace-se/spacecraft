@@ -17,20 +17,20 @@ const webpackConfig = {
   watch: false,
   output: {
     filename: 'main.js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: require.resolve('babel-loader'),
-        exclude: /node_modules/,
-        query: {
-          presets: [
-            require.resolve('babel-preset-env'),
-          ]
-        }
-      }
-    ]
+  // },
+  // module: {
+  //   loaders: [
+  //     {
+  //       test: /\.js$/,
+  //       loader: require.resolve('babel-loader'),
+  //       exclude: /node_modules/,
+  //       query: {
+  //         presets: [
+  //           require.resolve('babel-preset-env'),
+  //         ]
+  //       }
+  //     }
+  //   ]
   }
 }
 
